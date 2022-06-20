@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="CASSVerify" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="CASSVerify" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="CASSVerify/Imports">
+      <xsd:import schemaLocation="https://cassverify-test.state.ak.us/CASSVerify.svc?xsd=xsd0" namespace="CASSVerify" />
+      <xsd:import schemaLocation="https://cassverify-test.state.ak.us/CASSVerify.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://cassverify-test.state.ak.us/CASSVerify.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CASSVerify.BusinessObjects" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CASSVerifyServiceContract_VerifyAddressRaw_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAddressRaw" />
+  </wsdl:message>
+  <wsdl:message name="CASSVerifyServiceContract_VerifyAddressRaw_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAddressRawResponse" />
+  </wsdl:message>
+  <wsdl:message name="CASSVerifyServiceContract_VerifyAddressRawLegacy_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAddressRawLegacy" />
+  </wsdl:message>
+  <wsdl:message name="CASSVerifyServiceContract_VerifyAddressRawLegacy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAddressRawLegacyResponse" />
+  </wsdl:message>
+  <wsdl:message name="CASSVerifyServiceContract_VerifyAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAddress" />
+  </wsdl:message>
+  <wsdl:message name="CASSVerifyServiceContract_VerifyAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="CASSVerifyServiceContract_VerifyAddressBatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAddressBatch" />
+  </wsdl:message>
+  <wsdl:message name="CASSVerifyServiceContract_VerifyAddressBatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAddressBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="CASSVerifyServiceContract_VerifyAddressLegacy_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAddressLegacy" />
+  </wsdl:message>
+  <wsdl:message name="CASSVerifyServiceContract_VerifyAddressLegacy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAddressLegacyResponse" />
+  </wsdl:message>
+  <wsdl:message name="CASSVerifyServiceContract_VerifyAddressDebugDump_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAddressDebugDump" />
+  </wsdl:message>
+  <wsdl:message name="CASSVerifyServiceContract_VerifyAddressDebugDump_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAddressDebugDumpResponse" />
+  </wsdl:message>
+  <wsdl:message name="CASSVerifyServiceContract_GetVersionInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersionInformation" />
+  </wsdl:message>
+  <wsdl:message name="CASSVerifyServiceContract_GetVersionInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersionInformationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CASSVerifyServiceContract">
+    <wsdl:operation name="VerifyAddressRaw">
+      <wsdl:input wsaw:Action="CASSVerify/CASSVerifyServiceContract/VerifyAddressRaw" message="tns:CASSVerifyServiceContract_VerifyAddressRaw_InputMessage" />
+      <wsdl:output wsaw:Action="CASSVerify/CASSVerifyServiceContract/VerifyAddressRawResponse" message="tns:CASSVerifyServiceContract_VerifyAddressRaw_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyAddressRawLegacy">
+      <wsdl:input wsaw:Action="CASSVerify/CASSVerifyServiceContract/VerifyAddressRawLegacy" message="tns:CASSVerifyServiceContract_VerifyAddressRawLegacy_InputMessage" />
+      <wsdl:output wsaw:Action="CASSVerify/CASSVerifyServiceContract/VerifyAddressRawLegacyResponse" message="tns:CASSVerifyServiceContract_VerifyAddressRawLegacy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyAddress">
+      <wsdl:input wsaw:Action="CASSVerify/CASSVerifyServiceContract/VerifyAddress" message="tns:CASSVerifyServiceContract_VerifyAddress_InputMessage" />
+      <wsdl:output wsaw:Action="CASSVerify/CASSVerifyServiceContract/VerifyAddressResponse" message="tns:CASSVerifyServiceContract_VerifyAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyAddressBatch">
+      <wsdl:input wsaw:Action="CASSVerify/CASSVerifyServiceContract/VerifyAddressBatch" message="tns:CASSVerifyServiceContract_VerifyAddressBatch_InputMessage" />
+      <wsdl:output wsaw:Action="CASSVerify/CASSVerifyServiceContract/VerifyAddressBatchResponse" message="tns:CASSVerifyServiceContract_VerifyAddressBatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyAddressLegacy">
+      <wsdl:input wsaw:Action="CASSVerify/CASSVerifyServiceContract/VerifyAddressLegacy" message="tns:CASSVerifyServiceContract_VerifyAddressLegacy_InputMessage" />
+      <wsdl:output wsaw:Action="CASSVerify/CASSVerifyServiceContract/VerifyAddressLegacyResponse" message="tns:CASSVerifyServiceContract_VerifyAddressLegacy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyAddressDebugDump">
+      <wsdl:input wsaw:Action="CASSVerify/CASSVerifyServiceContract/VerifyAddressDebugDump" message="tns:CASSVerifyServiceContract_VerifyAddressDebugDump_InputMessage" />
+      <wsdl:output wsaw:Action="CASSVerify/CASSVerifyServiceContract/VerifyAddressDebugDumpResponse" message="tns:CASSVerifyServiceContract_VerifyAddressDebugDump_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionInformation">
+      <wsdl:input wsaw:Action="CASSVerify/CASSVerifyServiceContract/GetVersionInformation" message="tns:CASSVerifyServiceContract_GetVersionInformation_InputMessage" />
+      <wsdl:output wsaw:Action="CASSVerify/CASSVerifyServiceContract/GetVersionInformationResponse" message="tns:CASSVerifyServiceContract_GetVersionInformation_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

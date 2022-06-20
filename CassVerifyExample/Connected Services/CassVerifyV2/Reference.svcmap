@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f06c2ab3-1c04-4766-aef7-733cf00e4792" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://cassverify-test.state.ak.us/cassverify.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CASSVerify.xsd" MetadataType="Schema" ID="889cf3ed-7e8d-4633-bf22-a1958082f0ee" SourceId="1" SourceUrl="https://cassverify-test.state.ak.us/CASSVerify.svc?xsd=xsd1" />
+    <MetadataFile FileName="CASSVerify1.xsd" MetadataType="Schema" ID="b027a6d4-1b16-4d29-a1ee-8eedc2984cc0" SourceId="1" SourceUrl="https://cassverify-test.state.ak.us/CASSVerify.svc?xsd=xsd2" />
+    <MetadataFile FileName="CASSVerify2.xsd" MetadataType="Schema" ID="3f588ae7-f6a1-461f-a051-76d6f4bb1026" SourceId="1" SourceUrl="https://cassverify-test.state.ak.us/CASSVerify.svc?xsd=xsd0" />
+    <MetadataFile FileName="CASSVerify.disco" MetadataType="Disco" ID="0df4a45e-abef-4f67-9ba0-0c60c752326a" SourceId="1" SourceUrl="https://cassverify-test.state.ak.us/CASSVerify.svc?disco" />
+    <MetadataFile FileName="CASSVerify.wsdl" MetadataType="Wsdl" ID="48beb163-529e-49c1-804d-df68a0d55306" SourceId="1" SourceUrl="https://cassverify-test.state.ak.us/CASSVerify.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="CASSVerify1.wsdl" MetadataType="Wsdl" ID="036c179e-2654-4443-88f6-560190723e13" SourceId="1" SourceUrl="https://cassverify-test.state.ak.us/CASSVerify.svc?wsdl=wsdl1" />
+    <MetadataFile FileName="ServiceImplementationV2.wsdl" MetadataType="Wsdl" ID="729a9ba6-774b-476a-9c2f-76a8cc739c25" SourceId="1" SourceUrl="https://cassverify-test.state.ak.us/CASSVerify.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

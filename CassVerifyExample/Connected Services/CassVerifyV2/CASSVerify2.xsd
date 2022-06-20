@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="CASSVerify" elementFormDefault="qualified" targetNamespace="CASSVerify" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://cassverify-test.state.ak.us/CASSVerify.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CASSVerify.BusinessObjects" />
+  <xs:element name="VerifyAddressRaw">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="appKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="tns:AddressQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AddressQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Line1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Line2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Line3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressQuery" nillable="true" type="tns:AddressQuery" />
+  <xs:element name="VerifyAddressRawResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerifyAddressRawResult" nillable="true" type="tns:AddressResultRaw" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AddressResultRaw">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AddressQuery">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DPVDeliveryPoint" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DPVFlags" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DPVFootNote" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FinalistReturnCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddressResultRaw" nillable="true" type="tns:AddressResultRaw" />
+  <xs:element name="VerifyAddressRawLegacy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="appKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="tns:AddressQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyAddressRawLegacyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerifyAddressRawLegacyResult" nillable="true" type="tns:AddressResultRawLegacy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AddressResultRawLegacy">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AddressResultRaw">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LegacyErrorCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddressResultRawLegacy" nillable="true" type="tns:AddressResultRawLegacy" />
+  <xs:element name="VerifyAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="appKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="tns:AddressQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerifyAddressResult" nillable="true" type="tns:AddressResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AddressResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AddressQuery">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DPV" nillable="true" type="tns:AddressResultDPV" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CASSVerify.BusinessObjects" minOccurs="0" name="FinalistReturnCode" type="q1:CASSRefCodes.FinalistReturnCode" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddressResult" nillable="true" type="tns:AddressResult" />
+  <xs:complexType name="AddressResultDPV">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CASSVerify.BusinessObjects" minOccurs="0" name="DPVCMRAFlag" nillable="true" type="q2:CASSRefCodes.DPVCMRAFlag" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CASSVerify.BusinessObjects" minOccurs="0" name="DPVFalsePostiveFlag" nillable="true" type="q3:CASSRefCodes.DPVFalsePostiveFlag" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CASSVerify.BusinessObjects" minOccurs="0" name="DPVFlag" nillable="true" type="q4:CASSRefCodes.DPVFlag" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CASSVerify.BusinessObjects" minOccurs="0" name="DPVFootNotes" nillable="true" type="q5:ArrayOfCASSRefCodes.DPVFootNote" />
+      <xs:element minOccurs="0" name="DeliveryPoint" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressResultDPV" nillable="true" type="tns:AddressResultDPV" />
+  <xs:element name="VerifyAddressBatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="appKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="addresses" nillable="true" type="tns:ArrayOfAddressQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfAddressQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddressQuery" nillable="true" type="tns:AddressQuery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddressQuery" nillable="true" type="tns:ArrayOfAddressQuery" />
+  <xs:element name="VerifyAddressBatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerifyAddressBatchResult" nillable="true" type="tns:ArrayOfAddressResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfAddressResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddressResult" nillable="true" type="tns:AddressResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddressResult" nillable="true" type="tns:ArrayOfAddressResult" />
+  <xs:element name="VerifyAddressLegacy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="appKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="tns:AddressQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyAddressLegacyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerifyAddressLegacyResult" nillable="true" type="tns:AddressResultLegacy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AddressResultLegacy">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AddressResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LegacyErrorCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddressResultLegacy" nillable="true" type="tns:AddressResultLegacy" />
+  <xs:element name="VerifyAddressDebugDump">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="appKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="tns:AddressQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyAddressDebugDumpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerifyAddressDebugDumpResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersionInformation">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersionInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVersionInformationResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
